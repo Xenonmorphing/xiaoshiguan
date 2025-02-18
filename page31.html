@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校史答答看 - 第十四题</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="background3.css">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Ma Shan Zheng', sans-serif;
+        }
+
+        #schoollogo {
+            width: 150px;
+            /* Adjust size */
+            display: block;
+            margin: 0 auto;
+            /* Center */
+        }
+
+        svg {
+            display: block;
+            margin: 0 auto;
+            /* Center */
+        }
+    </style>
+
+    <script>
+        function goToTempPage(event, nextPage) {
+            event.preventDefault(); 
+            localStorage.setItem("nextPage", nextPage); 
+            window.location.href = "temp.html"; 
+        }
+    </script>
+    <script>
+        function goToTempPage2(event, nextPage) {
+            event.preventDefault(); 
+            localStorage.setItem("nextPage", nextPage); 
+            window.location.href = "temp2.html"; 
+        }
+    </script>
+</head>
+
+<body>
+    <div style="margin-bottom: 15px;"> </div>
+    <img id="schoollogo" src="https://www.kuencheng.edu.my/kchs/wp-content/uploads/2016/09/LOGO.png">
+    <img id="question"
+        src="https://imgur.com/gNH5oKi.png">
+    <div style="margin-bottom: 50px;"> </div>
+    <svg width="1000" height="200">
+        <text x="500" y="100" font-size="56" fill="black" font-weight="bold" font-family="Ma Shan Zheng"
+            text-anchor="middle" stroke="black" stroke-width="1">
+            坤成学校图书馆扩建后分为哪三大室？
+        </text>
+    </svg>
+
+    <a href="#" id="option1" onclick="goToTempPage(event, 'page32.html')">
+        <span>A. 藏书馆、阅览室、资料参考室</span>
+    </a>
+
+    <a href="#" id="option2" onclick="goToTempPage2(event, 'page32.html')">
+        <span>B. 藏书馆、会议室、多媒体室</span>
+    </a>
+
+    <a href="#" id="option3" onclick="goToTempPage2(event, 'page32.html')">
+        <span>C. 资料室、研究室、档案馆</span>
+    </a>
+
+    <a href="#" id="option4" onclick="goToTempPage2(event, 'page32.html')">
+        <span>D. 借书处、阅览室、休息室</span>
+    </a>
+</body>
+
+</html>

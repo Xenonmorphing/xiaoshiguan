@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跳转中...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校史答答看</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma Shan Zheng" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL XiaoWei" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="background3.css">
+
+    <script>
+        window.onload = function() {
+            let nextPage = localStorage.getItem("nextPage");
+            if (nextPage) {
+                setTimeout(() => {
+                    window.location.href = nextPage;
+                }, 500);
+            } else {
+                document.body.innerHTML = "<h1>错误：没有找到目标页面。</h1>";
+            }
+        };
+    </script>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Ma Shan Zheng', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="margin-bottom: 15px;"> </div>
+    <img id="schoollogo" src="https://www.kuencheng.edu.my/kchs/wp-content/uploads/2016/09/LOGO.png">
+    <div class="image-wrapper">
+        <div style="margin-bottom: 350px;"> </div>
+        <img  src="https://i.imgur.com/yleWmnW.png" alt="Image" id="correct"></img></div>
+        <script>
+            document.getElementById('question').addEventListener('animationend', function () {
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校史答答看 - 第十一题</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="background3.css">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Ma Shan Zheng', sans-serif;
+        }
+
+        #schoollogo {
+            width: 150px;
+            /* Adjust size */
+            display: block;
+            margin: 0 auto;
+            /* Center */
+        }
+
+        svg {
+            display: block;
+            margin: 0 auto;
+            /* Center */
+        }
+    </style>
+
+    <script>
+        function goToTempPage(event, nextPage) {
+            event.preventDefault(); 
+            localStorage.setItem("nextPage", nextPage); 
+            window.location.href = "temp.html"; 
+        }
+    </script>
+    <script>
+        function goToTempPage2(event, nextPage) {
+            event.preventDefault(); 
+            localStorage.setItem("nextPage", nextPage); 
+            window.location.href = "temp2.html"; 
+        }
+    </script>
+</head>
+
+<body>
+    <div style="margin-bottom: 15px;"> </div>
+    <img id="schoollogo" src="https://www.kuencheng.edu.my/kchs/wp-content/uploads/2016/09/LOGO.png">
+    <img id="question"
+        src="https://imgur.com/5of5CgR.png">
+    <div style="margin-bottom: 50px;"> </div>
+    <svg width="1000" height="200">
+        <text x="500" y="100" font-size="53" fill="black" font-weight="bold" font-family="Ma Shan Zheng"
+            text-anchor="middle" stroke="black" stroke-width="1">
+            林宝权校长推动的改革包括以下哪项内容？
+        </text>
+    </svg>
+
+    <a href="#" id="option1" onclick="goToTempPage2(event, 'page26.html')">
+        <span>A. 引进计算机课程</span>
+    </a>
+
+    <a href="#" id="option2" onclick="goToTempPage2(event, 'page26.html')">
+        <span>B. 增设高级教育文凭班</span>
+    </a>
+
+    <a href="#" id="option3" onclick="goToTempPage(event, 'page26.html')">
+        <span>C. 制定学校行政大纲和学生奖惩规条</span>
+    </a>
+
+    <a href="#" id="option4" onclick="goToTempPage2(event, 'page26.html')">
+        <span>D. 举办国际学术交流</span>
+    </a>
+</body>
+
+</html>
