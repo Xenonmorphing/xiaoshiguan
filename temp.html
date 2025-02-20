@@ -5,33 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跳转中...</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma Shan Zheng" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL XiaoWei" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma+Shan+Zheng" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="background3.css">
 
     <script>
         window.onload = function() {
-            let score = localStorage.getItem("score");
-            score = score ? parseInt(score) : 0;
+            let score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")) : 0;
 
-            // Ensure score is only added ONCE per question
+            // Ensure score only increments once per question
             if (!sessionStorage.getItem("scored")) {
-                score += 1;
+                score += 1; // Increment score for a correct answer
                 localStorage.setItem("score", score);
                 sessionStorage.setItem("scored", "true");
             }
 
             let nextPage = localStorage.getItem("nextPage");
+
+            console.log("Current Score:", score); // Debugging
+            console.log("Next Page:", nextPage);   // Debugging
+
+            // Redirect to the next page after 0.5 seconds
             if (nextPage) {
                 setTimeout(() => {
+                    sessionStorage.removeItem("scored"); // Reset flag for the next question
                     window.location.href = nextPage;
                 }, 500);
             } else {
                 document.body.innerHTML = "<h1>错误：没有找到目标页面。</h1>";
             }
-
-            console.log("Current Score:", score); // Debugging: Check if score increments correctly
         };
     </script>
 
