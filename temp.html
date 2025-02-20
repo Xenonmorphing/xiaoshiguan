@@ -14,22 +14,20 @@
         window.onload = function() {
             let score = localStorage.getItem("score") ? parseInt(localStorage.getItem("score")) : 0;
 
-            // Ensure score only increments once per question
             if (!sessionStorage.getItem("scored")) {
-                score += 1; // Increment score for a correct answer
+                score += 1; 
                 localStorage.setItem("score", score);
                 sessionStorage.setItem("scored", "true");
             }
 
             let nextPage = localStorage.getItem("nextPage");
 
-            console.log("Current Score:", score); // Debugging
-            console.log("Next Page:", nextPage);   // Debugging
+            console.log("Current Score:", score);
+            console.log("Next Page:", nextPage);
 
-            // Redirect to the next page after 0.5 seconds
             if (nextPage) {
                 setTimeout(() => {
-                    sessionStorage.removeItem("scored"); // Reset flag for the next question
+                    sessionStorage.removeItem("scored"); 
                     window.location.href = nextPage;
                 }, 500);
             } else {
