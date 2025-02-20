@@ -11,13 +11,10 @@
 
     <script>
         window.onload = function() {
-            let score = localStorage.getItem("score") || 0; // Get score from storage
-            document.getElementById("scoreDisplay").innerText = score; // Update the display
+            let score = localStorage.getItem("score") || 0; 
+            document.getElementById("scoreDisplay").innerText = score; 
 
-            console.log("Final Score:", score); // Debugging: Check if the score is correct
-
-            // Optional: Reset score for a new game
-            // localStorage.removeItem("score"); 
+            console.log("Final Score:", score); 
         };
     </script>
 
