@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跳转中...</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>校史答答看</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma Shan Zheng" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ZCOOL XiaoWei" />
     <link rel="stylesheet" href="styles.css">
@@ -14,6 +12,16 @@
 
     <script>
         window.onload = function() {
+            let score = localStorage.getItem("score");
+            score = score ? parseInt(score) : 0;
+
+            // Ensure score is only added ONCE per question
+            if (!sessionStorage.getItem("scored")) {
+                score += 1;
+                localStorage.setItem("score", score);
+                sessionStorage.setItem("scored", "true");
+            }
+
             let nextPage = localStorage.getItem("nextPage");
             if (nextPage) {
                 setTimeout(() => {
@@ -22,6 +30,8 @@
             } else {
                 document.body.innerHTML = "<h1>错误：没有找到目标页面。</h1>";
             }
+
+            console.log("Current Score:", score); // Debugging: Check if score increments correctly
         };
     </script>
 
@@ -34,15 +44,12 @@
 </head>
 
 <body>
-    <div style="margin-bottom: 15px;"> </div>
+    <div style="margin-bottom: 15px;"></div>
     <img id="schoollogo" src="https://www.kuencheng.edu.my/kchs/wp-content/uploads/2016/09/LOGO.png">
     <div class="image-wrapper">
-        <div style="margin-bottom: 350px;"> </div>
-        <img  src="https://i.imgur.com/yleWmnW.png" alt="Image" id="correct"></img></div>
-        <script>
-            document.getElementById('question').addEventListener('animationend', function () {
-            });
-        </script>
+        <div style="margin-bottom: 350px;"></div>
+        <img src="https://i.imgur.com/yleWmnW.png" alt="Image" id="correct">
+    </div>
 </body>
 
 </html>

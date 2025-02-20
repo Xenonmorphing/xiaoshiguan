@@ -8,34 +8,68 @@
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="第一页" />
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma Shan Zheng" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ma+Shan+Zheng&display=swap" />
   <link rel="stylesheet" href="background1.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    window.onload = function() {
+      let score = localStorage.getItem("score") || 0;
+      document.getElementById("scoreDisplay").innerText = score;
+    };
+  </script>
+
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Ma Shan Zheng', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #scoreContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    #scoreText {
+      font-size: 60px;
+      font-weight: bold;
+      color: black;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    #scoreDisplay {
+      font-size: 80px;
+      font-weight: bold;
+      color: red;
+      text-shadow: 3px 3px 6px rgba(255, 0, 0, 0.5);
+    }
+  </style>
 </head>
 
 <body>
 
   <video autoplay muted loop id="myVideo">
-    <source
-      src="https://i.imgur.com/ZnY8MvB.mp4&"
-      type="video/mp4">
+    <source src="https://i.imgur.com/ZnY8MvB.mp4" type="video/mp4">
   </video>
-  <img id="clothstrip"
-    src="https://i.imgur.com/kg7dsSa.png">
-  <div style="margin-bottom: 15px;"> </div>
+
+  <img id="clothstrip" src="https://i.imgur.com/kg7dsSa.png">
+
   <img id="schoollogo" src="https://www.kuencheng.edu.my/kchs/wp-content/uploads/2016/09/LOGO.png">
 
-  <div style="margin-bottom: 250px;"> </div>
-  <img
-    src="https://i.imgur.com/KVaPEba.png"
-    style="margin-left: 25px;" width="800" height="250">
-
-
-  <div style="margin-bottom: 10px;"> </div>
-
-  <svg width="1000" height="200"><text x="100" y="100" font-size="60" font-family="Ma Shan Zheng" stroke="black"
-      stroke-width="2">您的最终得分：</text><!--p id="result"></p--></svg>
+  <div id="scoreContainer">
+    <span id="scoreText">您的最终得分：</span>
+    <h2 id="scoreDisplay">0</h2>
+  </div>
 
 </body>
-<script src="script.js"></script>
+
 </html>
