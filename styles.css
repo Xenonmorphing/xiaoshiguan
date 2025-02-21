@@ -5,3 +5,12 @@
   cursor: pointer;
   display: inline-block;
 }
+
+#scoreDisplay {
+  position: absolute;
+  left: 550px;
+  bottom: 150px;
+  font-size: 60px;
+  font-family: "Ma Shan Zheng";
+  color: black;
+}
